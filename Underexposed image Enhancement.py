@@ -39,22 +39,9 @@ plt.imshow(img)
 plt.show()
 cv2.imwrite('D:\Documents\MSc MI\Sem 2\Mini project\Image dataset\image_1_enhanced.jpg',img)
 
-#2.log transformation
-"""for i in range(row):
-    for j in range(col):
-        for k in range(channel):
-            img_array[i][j][k]=np.uint8(np.clip(math.log1p(50.0*img_array[i][j][k]),intensity_min,intensity_max))
-plt.imshow(img_array)
-plt.show()  
-cv2.imwrite('D:\Documents\MSc MI\Sem 2\Mini project\chumma_log.jpg',img)
-#power function
-img=np.uint8(np.clip(pow(img,3.0),intensity_min,intensity_max))
-plt.imshow(img)
-plt.show()    
-img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-cv2.imwrite('D:\Documents\MSc MI\Sem 2\Mini project\image10\image10_power3.jpg',img)
 
-#3.CLAHE method
+
+#2.CLAHE method
 
 img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 h,s,v=img[:,:,0],img[:,:,1],img[:,:,2]
@@ -66,7 +53,7 @@ plt.imshow(img)
 plt.show()
 cv2.imwrite('D:\Documents\MSc MI\Sem 2\Mini project\image10\image10_clahe.jpg',img)
 
-#4.histogram equalization
+#3.histogram equalization
 
 img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 h,s,v=cv2.split(img)
