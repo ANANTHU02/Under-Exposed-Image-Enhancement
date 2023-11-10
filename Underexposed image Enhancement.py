@@ -20,7 +20,8 @@ channel=img_array.shape[2]
 a=43.0
 intensity_min=0.0
 intensity_max=254.0
-#linear transformation
+
+#1.linear transformation
 
 for i in range(row):
     for j in range(col):
@@ -38,7 +39,7 @@ plt.imshow(img)
 plt.show()
 cv2.imwrite('D:\Documents\MSc MI\Sem 2\Mini project\Image dataset\image_1_enhanced.jpg',img)
 
-#log transformation
+#2.log transformation
 """for i in range(row):
     for j in range(col):
         for k in range(channel):
@@ -52,7 +53,9 @@ plt.imshow(img)
 plt.show()    
 img=cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 cv2.imwrite('D:\Documents\MSc MI\Sem 2\Mini project\image10\image10_power3.jpg',img)
-#CLAHE method
+
+#3.CLAHE method
+
 img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 h,s,v=img[:,:,0],img[:,:,1],img[:,:,2]
 clahe=cv2.createCLAHE(clipLimit=5.0,tileGridSize=(1,1))
@@ -62,7 +65,9 @@ img=cv2.cvtColor(img,cv2.COLOR_HSV2BGR)
 plt.imshow(img)
 plt.show()
 cv2.imwrite('D:\Documents\MSc MI\Sem 2\Mini project\image10\image10_clahe.jpg',img)
-#histogram equalization
+
+#4.histogram equalization
+
 img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)
 h,s,v=cv2.split(img)
 v=cv2.equalizeHist(v)
